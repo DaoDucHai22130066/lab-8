@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Xem Phim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #003a4a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+        }
+
+        form input, form select {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            width: 80%;
+        }
+
+        .movie {
+            width: calc(20% - 20px); /* 20% chiều rộng, trừ 20px margin */
+            margin: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .movie img {
+            width: 100%;
+            border-radius: 6px;
+        }
+        footer{
+            background-color: #fff;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trang Xem Phim</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Chọn Thể Loại</a></li>
+                <li><a href="login.html" target="_blank">Đăng Nhập</a></li>
+                <li><a href="login.html" target="_blank">Đăng Ký</a></li>
+            </ul>
+        </nav>
+
+        <form id="searchForm">
+            <input type="text" placeholder="Tìm kiếm...">
+            <select>
+                <option value="">Tất cả thể loại</option>
+                <option value="action">Hành động</option>
+                <option value="comedy">Hài hước</option>
+                <option value="drama">Drama</option>
+                <option value="drama">Kinh dị</option>
+                <option value="drama">Tình cảm</option>
+                <option value="drama">Anime</option>
+            </select>
+            <button type="button" onclick="searchMovies()">Tìm kiếm</button>
+        </form>
+    </header>
+
+    <main id="movieContainer">
+        <!-- Bộ phim 1 -->
+        <div class="movie">
+            <a href="https://motchilli.net/phim/chien-ham-1071.html"><img src="img/action.jpg" alt="Phim 1"></a>
+            <h3>Battle Ship</h3>
+            <p>Thể loại: Hành động</p>
+        </div>
+        
+        <!-- Bộ phim 2 -->
+        <div class="movie">
+            <a href="https://fsharetv.com/movie/hall-pass-episode-1-tt0480687"><img src="img/comedy.jpg" alt="Phim 2"></a>
+            <h3>Hall Pass</h3>
+            <p>Thể loại: Hài hước</p>
+        </div>
+
+        <!-- Bộ phim 3 -->
+        <div class="movie">
+            <a href="https://www.iq.com/album/times-thoi-khac-sinh-tu-2021-2gn2w5ukjml?lang=vi_vn"><img src="img/drama.jpg" alt="Phim 3"></a>
+            <h3>Among Times</h3>
+            <p>Thể loại: Drama</p>
+        </div>
+
+        <!-- Bộ phim 4 -->
+        <div class="movie">
+            <a href="https://www.bing.com/search?q=xem+the+conjuring&qs=CT&pq=xem+the+con&sc=6-11&cvid=EC33DEF0A41B47A7AA2C3371F37130DF&FORM=QBRE&sp=1&ghc=1&lq=0"><img src="img/horror.jpg" alt="Phim 4"></a>
+            <h3>The conjuring</h3>
+            <p>Thể loại: Kinh dị</p>
+        </div>
+
+        <!-- Bộ phim 5 -->
+        <div class="movie">
+            <a href="https://www.bing.com/search?q=xem+the+offering+2022&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=xem+the+offering+2022&sc=6-21&sk=&cvid=DD2F12EC693C4180ABD41C5E79D00319&ghsh=0&ghacc=0&ghpl="><img src="img/horror2.jpg" alt="Phim 5"></a>
+            <h3>Offering</h3>
+            <p>Thể loại: Kinh dị</p>
+        </div>
+
+        <div class="movie">
+            <a href="https://motchilli.net/phim/ma-tran-2455.html"><img src="img/action2.jpg" alt="Phim 6"></a>
+            <h3>Matrix</h3>
+            <p>Thể loại: action</p>
+        </div>
+
+        <div class="movie">
+            <a href="https://www.iq.com/album/love-for-love-s-sake-2024-1od5aw0kbl1?lang=vi_vn"><img src="img/love.jpg" alt="Phim 7"></a>
+            <h3>For the love of eye</h3>
+            <p>Thể loại: tình cảm</p>
+        </div>
+
+        <div class="movie">
+            <a href="https://animet.net/phim-akuyaku-reijou-level-99-watashi-wa-ura-boss-desu-ga-maou-dewa-arimasen-tap-1-5394.154720.html"><img src="img/anime.jpg" alt="Phim 8"></a>
+            <h3>The villians level 99</h3>
+            <p>Thể loại: anime</p>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <h2>Liên hệ chúng tôi</h2>
+            <p>Để liên hệ hoặc đề xuất phim mới, vui lòng điền biểu mẫu dưới đây:</p>
+
+            <form id="contactForm">
+                <label for="name">Họ và tên:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Nội dung:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Gửi</button>
+            </form>
+        </div>
+    </footer>
+
+    <script>
+        
+
+        var movieContainer = document.getElementById("movieContainer");
+
+        movies.forEach(movie => {
+            var movieElement = document.createElement("div");
+            movieElement.classList.add("movie");
+
+            var imgElement = document.createElement("img");
+            imgElement.src = movie.image;
+            imgElement.alt = movie.title;
+
+            var titleElement = document.createElement("h3");
+            titleElement.textContent = movie.title;
+
+            var genreElement = document.createElement("p");
+            genreElement.textContent = "Thể loại: " + movie.genre;
+
+            movieElement.appendChild(imgElement);
+            movieElement.appendChild(titleElement);
+            movieElement.appendChild(genreElement);
+
+            movieContainer.appendChild(movieElement);
+        });
+
+        function searchMovies() {
+            alert("Chức năng tìm kiếm chưa được triển khai trong ví dụ này.");
+        }
+        
+    </script>
+</body>
+</html>
